@@ -25,7 +25,6 @@ app.post("/conflict", (c) => {
 });
 
 app.get('/html', (c) => {
-  console.log(1)
   return c.html('<html><head><title>test</title></head><body><h1>test</h1></body></html>')
 })
 
