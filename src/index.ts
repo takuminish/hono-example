@@ -8,7 +8,7 @@ app.get("/", (c) => {
   return c.json({ result: "get" }, 200);
 });
 
-app.get("/:id", (c) => {
+app.get("/test/:id", (c) => {
   return c.json({ result: c.req.param("id") });
 });
 
@@ -23,6 +23,11 @@ app.get("/not-found", (c) => {
 app.post("/conflict", (c) => {
   return c.json({ result: "conflict" }, 409);
 });
+
+app.get('/html', (c) => {
+  console.log(1)
+  return c.html('<html><head><title>test</title></head><body><h1>test</h1></body></html>')
+})
 
 const nestApp = new Hono();
 nestApp.get("/", (c) => {
